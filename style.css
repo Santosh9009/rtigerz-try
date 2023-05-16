@@ -945,12 +945,28 @@ font-family: 'Salsa', cursive;
     opacity: 100%;
   }
   /* faq */
+  .faq{
+    height: calc(120vh - 30vh);
+  }
   .number{
     min-width: 10%;
+  }
+  .query{
+    height: calc(50vh - 30vh);
   }
   .lastlogo img{
     min-width: 30%;
     margin-left: 3rem;
+  }
+  .handle{
+    width: 20%;
+  }
+  .handle .fa-brands{
+    width: 25%;
+    margin: 0 .2em;
+  }
+  .end{
+    height:fit-content;
   }
 }
 @media(max-width:480px){
