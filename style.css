@@ -70,7 +70,6 @@ a:hover{
   display: none;
 }
 
-
 .check-btn{
   display: none;
   cursor: pointer;
@@ -89,7 +88,7 @@ a:hover{
   display: none;
 }
 /* media */
-@media only screen and (max-width:900px) {
+@media only screen and (max-width:900px){
 
   .navbar .links,
   .navbar .btn {
@@ -107,19 +106,22 @@ a:hover{
       height:60vh;
       justify-content: center;
       /* background-color:rgb(82, 111, 164); */
-      background:linear-gradient(to bottom ,black,#2c73EB);
+      background:linear-gradient(to bottom ,black,#415477);
       margin-top: -900px;
       transition: all 0.5s ease;
-      border-bottom-right-radius: 250px;
+      border-bottom-right-radius: 200px;
   }
   .drop-menu li {
       padding: 0.7rem;
       display: flex;
       justify-content: center;
       align-items: center; 
+      
   }
   .drop-menu a{
     font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
   }
 
   .check-btn{
@@ -127,6 +129,9 @@ a:hover{
   }
    .drop-menu .btn{
       display: block;
+   }
+   .check-btn img{
+    transition: all .2s ease-in;
    }
 
   #check {
@@ -139,8 +144,16 @@ a:hover{
   }
 
   #check:checked ~ .drop-menu{
-    margin: 70px auto;
+    margin: 80px auto auto auto;
   }
+  #check:checked ~ .check-btn img{
+    transform: rotate(90deg);
+    z-index: 1;
+  }
+  /* #check:checked ~ .navbar .logo{
+    display: none;
+  } */
+
 }
  /* main insider header */
 .main{
@@ -170,12 +183,17 @@ a:hover{
 .l3{
   width:1.3rem ;
 }
-
-.col1 h5{
+.scrolll{
   height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+.scrolll h5{
+  width:fit-content;
   color: white;
   rotate: 90deg;
-  padding: 7rem 0 0 2rem;
   font-weight: bolder;
   font-family: 'Open Sans', sans-serif;
 }
@@ -668,6 +686,13 @@ font-family: 'Salsa', cursive;
   html{
     font-size: 88%;
   }
+  /* header */
+  .main .col1{
+    display: none;
+  /* space */
+  .space{
+    height: 0;
+  }
   /* page 4 */
   .page4{
     height: calc(100vh + 25rem);
@@ -747,10 +772,15 @@ font-family: 'Salsa', cursive;
   html{
     font-size: 72%;
   }
+  /* space */
+   .space{
+    height: 5vh;
+   }
      /*header*/
      .navbar .logo{
       width: 25vw;
-      max-width: 13%;
+      max-width: 11%;
+      padding-bottom: 1em;
      }
      .col1 h5{
       margin-top: 22rem;
@@ -759,7 +789,7 @@ font-family: 'Salsa', cursive;
     .address iframe{
       margin: 0;
       max-width: 90%;
-      max-height: 50%;
+      max-height: 40%;
       border-radius: 5px;
     }
     .address .col1{
@@ -782,10 +812,11 @@ font-family: 'Salsa', cursive;
     .page1 .grp-pic{
       margin: 0;
       padding: 1.2rem;
+      width: 95%;
     }
     .page1 .info{
       margin-top: -4rem;
-      font-size: small;
+      font-size: 2em;
     }
     /* page2 */
     .page2 .title{
@@ -794,7 +825,10 @@ font-family: 'Salsa', cursive;
    ._2{
     font-size: 16rem;
     margin: 0;
-   }
+    }
+    .page2 .dance-pic{
+      width: 90%;
+    }
     /* page3 */
     .page3 .title{
       transform: translateX(0);
@@ -893,5 +927,8 @@ font-family: 'Salsa', cursive;
 @media(max-width:480px){
   html{
     font-size: 60%;
+  }
+  #check:checked ~ .drop-menu{
+    margin: 58px auto;
   }
 }
