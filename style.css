@@ -9,7 +9,27 @@
  body , html{
   overflow-x: hidden;
  }
- 
+ .go-top-btn{
+  position: fixed;
+  right: 1rem; bottom: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  height:70px;
+  width: 50px;
+  background-color: #fff;
+  border: 2px solid black;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 10px 0px rgb(85, 241, 249);
+}
+ .go-top-btn img{
+  object-fit: cover;
+  height: 50%;
+  width: 50%;
+
+ }
  header {
    height: 100vh;
    background-image: url(img/Picture1.jpg);
@@ -98,18 +118,17 @@ a:hover{
     display: block;
   }
   .drop-menu {
-      position: fixed;  
+      position:sticky;  
       display: flex;
-      border-radius: 15px;
+      border-radius: 30px;
       flex-direction: column;
-      width: 100vw;
+      width:100vw;
       height:60vh;
       justify-content: center;
-      /* background-color:rgb(82, 111, 164); */
-      background:linear-gradient(to bottom ,black,#415477);
-      margin-top: -900px;
-      transition: all 0.5s ease;
-      border-bottom-right-radius: 200px;
+      background:linear-gradient(to bottom ,black,#41577c);
+      margin-right: -900px;
+      transition: all 0.5s ease-out;
+      /* border-bottom-left-radius: 150px */
   }
   .drop-menu li {
       padding: 0.7rem;
@@ -144,7 +163,8 @@ a:hover{
   }
 
   #check:checked ~ .drop-menu{
-    margin: 80px auto auto auto;
+    margin-right: 60px;
+    right: 3rem;
   }
   #check:checked ~ .check-btn img{
     transform: rotate(90deg);
@@ -357,12 +377,11 @@ font-family: 'Salsa', cursive;
   margin-top: -4rem;
 }
 .no{
-  color: white;
   font-size: 18rem;
   font-weight: 2rem;
   font-family: 'Saira', sans-serif;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 6px white ;
+  -webkit-text-stroke: 6px #fff ;
 }
 .page2 ._2{
   height: 30vh;
@@ -473,6 +492,12 @@ font-family: 'Salsa', cursive;
   align-items: center;
   font-family: 'Saira', sans-serif;
   gap: 1rem;
+  
+}
+.cards:hover{
+  transform: scale(1.05);
+  opacity: 100%;
+  animation: all .6s ease;
 }
 .cards h1{
   height: 8vh;
@@ -719,7 +744,7 @@ font-family: 'Salsa', cursive;
   .cards h1{
     height: 7%;
     padding: 1rem 0 0 0 ;
-    font-size: 1.9em;
+    font-size: 1.5em;
   }
   .cards .icon{
     padding-top: 1rem;
@@ -771,6 +796,10 @@ font-family: 'Salsa', cursive;
 @media(max-width:768px) {
   html{
     font-size: 72%;
+  }
+  .go-top-btn{
+    height: 50px;
+    width: 50px;
   }
   /* space */
    .space{
@@ -925,9 +954,9 @@ font-family: 'Salsa', cursive;
   }
 }
 @media(max-width:480px){
-  html{
+    html{
     font-size: 60%;
-  }
+  } 
   #check:checked ~ .drop-menu{
     margin: 58px auto;
   }
