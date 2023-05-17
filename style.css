@@ -9,6 +9,9 @@
  body , html{
   overflow-x: hidden;
  }
+ html {
+  scroll-behavior: smooth;
+}
  .go-top-btn{
   position: fixed;
   right: 1rem; bottom: 1rem;
@@ -22,12 +25,12 @@
   display: none;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 5px 10px 0px rgb(85, 241, 249);
+  box-shadow: 0px 5px 10px 0px rgb(113, 117, 117);
 }
  .go-top-btn img{
   object-fit: cover;
-  height: 50%;
-  width: 50%;
+  height: 70%;
+  width: 70%;
 
  }
  header {
@@ -38,6 +41,7 @@
  }
  .navbar{
   display: flex;
+  position: sticky;
   background-color: black;
   height: 10vh;
   justify-content:space-between;
@@ -118,7 +122,7 @@ a:hover{
     display: block;
   }
   .drop-menu {
-      position:sticky;  
+      position:static;  
       display: flex;
       border-radius: 30px;
       flex-direction: column;
@@ -164,15 +168,12 @@ a:hover{
 
   #check:checked ~ .drop-menu{
     margin-right: 60px;
-    right: 3rem;
+    /* right: 3rem; */
   }
   #check:checked ~ .check-btn img{
     transform: rotate(90deg);
     z-index: 1;
   }
-  /* #check:checked ~ .navbar .logo{
-    display: none;
-  } */
 
 }
  /* main insider header */
@@ -492,12 +493,7 @@ font-family: 'Salsa', cursive;
   align-items: center;
   font-family: 'Saira', sans-serif;
   gap: 1rem;
-  
-}
-.cards:hover{
-  transform: scale(1.05);
-  opacity: 100%;
-  animation: all .6s ease;
+  border: 3px solid black;
 }
 .cards h1{
   height: 8vh;
@@ -590,15 +586,25 @@ font-family: 'Salsa', cursive;
 .join h2{
   color: black;
 }
-.card2{
+ .card2{
   height: 90vh;
+} 
+.card2 h1{
+  margin-top: 3rem;
 }
-.card1 , .card3{
+ .card1 , .card3{
+  opacity: 50%;
+} 
+.card1:hover ~ .card2{
   opacity: 50%;
 }
-.card2 h1{
- margin-top: 3rem;
+.cards:hover{
+  transform: scale(1.05);
+  opacity: 100%;
+  animation: all .6s ease;
 }
+
+
 
 /* faq section */
 .faq{
@@ -740,6 +746,13 @@ font-family: 'Salsa', cursive;
     max-width: 25rem;
     height: 35%;
     border-radius: 5px;
+    border: 3px solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
   }
   .cards h1{
     height: 7%;
@@ -908,6 +921,9 @@ font-family: 'Salsa', cursive;
   .cards h1{
     height: 7%;
     padding: 1rem 0 0 0 ;
+  }
+  .card2 h1{
+    margin:0;
   }
   .cards .icon{
     padding-top: 1rem;
