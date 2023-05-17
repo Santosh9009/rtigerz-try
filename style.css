@@ -110,7 +110,7 @@ a:hover{
   cursor: pointer;
   display: none;
 }
-/* media */
+/* media for dropdown*/
 @media only screen and (max-width:900px){
 
   .navbar .links,
@@ -123,16 +123,15 @@ a:hover{
   .drop-menu {
       position:static;  
       display: flex;
-      border-radius: 30px;
+      /* border-radius: 10px;  */
       flex-direction: column;
-      width:100%;
-      height:60vh;
+      width:90%;
+      height:80vh;
       justify-content: center;
-      background-image: linear-gradient( to bottom,
-      #0f2027 ,#203a43 , #2c5364);
+      background-color:black;
       margin-right: -900px;
-      transition: all 0.5s ease;
-      z-index: 200;
+      transition: all 0.3s ease;
+      border-bottom-left-radius:300px;
   }
   .drop-menu li {
       padding: 0.7rem;
@@ -142,7 +141,7 @@ a:hover{
       
   }
   .drop-menu a{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
   }
@@ -167,14 +166,10 @@ a:hover{
   }
 
   #check:checked ~ .drop-menu{
-    margin: 80px 60px 0 0;
-    z-index: 300;
+    margin-right: 80px ;
   }
   #check:checked ~ .check-btn img{
     transform: rotate(90deg);
-  }
-  #check:checked ~ .tagline2{
-    z-index: -1;
   }
 
 }
@@ -240,33 +235,10 @@ font-family: 'Salsa', cursive;
   font-size: 5rem;
 }
 .col2 .tagline2{
-  position: relative;
-  font-size:5rem ;
+  font-size:5rem;
   margin-left: 1rem;
-  color: transparent ;
-  /* -webkit-text-stroke: 0.3vw black; */
+  color:#2c73EB
 }
-.tagline2::before{
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0;
-  width: 0%;
-  height: 100%;
-  color:#2c73EB;
-  -webkit-text-stroke: 0vw black;
-  border-right: 2px solid #2c73EB;
-  overflow: hidden;
-  animation: animate 3s linear infinite;
-}
-@keyframes animate{
-  0%,10%,100%{
-    width: 0;
-  }
-  70%,90%{
-    width: 100%;
-  }
-}
-
 .tagline{
   margin-left:1.5rem;
   font-family: 'Open Sans', sans-serif;
@@ -373,7 +345,7 @@ font-family: 'Salsa', cursive;
   font-weight: 2rem;
   font-family: 'Saira', sans-serif;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 6px #667ef5 ;
+  -webkit-text-stroke: 6px #fff ;
 }
 .page1 .info{
   color: white;
@@ -405,7 +377,7 @@ font-family: 'Salsa', cursive;
   font-weight: 2rem;
   font-family: 'Saira', sans-serif;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 6px #667ef5 ;
+  -webkit-text-stroke: 6px #fff ;
 }
 .page2 ._2{
   height: 30vh;
@@ -757,6 +729,7 @@ font-family: 'Salsa', cursive;
   /* header */
   .main .col1{
     display: none;
+  }
   /* space */
   .space{
     height: 0;
@@ -868,9 +841,6 @@ font-family: 'Salsa', cursive;
      .col1 h5{
       margin-top: 22rem;
      }
-     .tagline2{
-      display:inline-block;
-     }
     
     /* address*/
     .address iframe{
@@ -896,6 +866,9 @@ font-family: 'Salsa', cursive;
     .page1 .second{
       padding-top: 2rem;
     }
+    .page1 h6{
+      -webkit-text-stroke: 3px #6f76fe ;
+    }
     .page1 .grp-pic{
       margin: 0;
       padding: 1.2rem;
@@ -908,6 +881,9 @@ font-family: 'Salsa', cursive;
     /* page2 */
     .page2 .title{
       font-size: 6rem;
+    }
+    .no{
+      -webkit-text-stroke: 3px #6f76fe ;
     }
    ._2{
     font-size: 16rem;
@@ -1030,7 +1006,7 @@ font-family: 'Salsa', cursive;
     height:fit-content;
   }
 }
-}
+
 @media(max-width:480px){
   html{
   font-size: 60%;
