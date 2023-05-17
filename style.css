@@ -25,7 +25,6 @@
   display: none;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 5px 10px 0px rgb(113, 117, 117);
 }
  .go-top-btn img{
   object-fit: cover;
@@ -126,13 +125,14 @@ a:hover{
       display: flex;
       border-radius: 30px;
       flex-direction: column;
-      width:100vw;
+      width:100%;
       height:60vh;
       justify-content: center;
-      background:linear-gradient(to bottom ,black,#41577c);
+      background-image: linear-gradient( to bottom,
+      #0f2027 ,#203a43 , #2c5364);
       margin-right: -900px;
-      transition: all 0.5s ease-out;
-      /* border-bottom-left-radius: 150px */
+      transition: all 0.5s ease;
+      z-index: 200;
   }
   .drop-menu li {
       padding: 0.7rem;
@@ -167,12 +167,14 @@ a:hover{
   }
 
   #check:checked ~ .drop-menu{
-    margin-right: 60px;
-    /* right: 3rem; */
+    margin: 80px 60px 0 0;
+    z-index: 300;
   }
   #check:checked ~ .check-btn img{
     transform: rotate(90deg);
-    z-index: 1;
+  }
+  #check:checked ~ .tagline2{
+    z-index: -1;
   }
 
 }
@@ -238,10 +240,33 @@ font-family: 'Salsa', cursive;
   font-size: 5rem;
 }
 .col2 .tagline2{
+  position: relative;
   font-size:5rem ;
   margin-left: 1rem;
-  color:#2c73EB;
+  color: transparent ;
+  /* -webkit-text-stroke: 0.3vw black; */
 }
+.tagline2::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 0%;
+  height: 100%;
+  color:#2c73EB;
+  -webkit-text-stroke: 0vw black;
+  border-right: 2px solid #2c73EB;
+  overflow: hidden;
+  animation: animate 3s linear infinite;
+}
+@keyframes animate{
+  0%,10%,100%{
+    width: 0;
+  }
+  70%,90%{
+    width: 100%;
+  }
+}
+
 .tagline{
   margin-left:1.5rem;
   font-family: 'Open Sans', sans-serif;
@@ -281,12 +306,10 @@ font-family: 'Salsa', cursive;
   width: 30vw;
   font-size: 3rem;
   font-family: 'Russo One', sans-serif;
-  /* margin-left: 10rem; */
 }
 .address p{
   height: 10vh;
   width: 30vw;
-  /* margin:0 0 5rem 10rem; */
   font-size: 1.5rem;
   font-family: 'Open Sans', sans-serif;
 }
@@ -350,7 +373,7 @@ font-family: 'Salsa', cursive;
   font-weight: 2rem;
   font-family: 'Saira', sans-serif;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 6px white ;
+  -webkit-text-stroke: 6px #667ef5 ;
 }
 .page1 .info{
   color: white;
@@ -382,7 +405,7 @@ font-family: 'Salsa', cursive;
   font-weight: 2rem;
   font-family: 'Saira', sans-serif;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 6px #fff ;
+  -webkit-text-stroke: 6px #667ef5 ;
 }
 .page2 ._2{
   height: 30vh;
@@ -493,7 +516,16 @@ font-family: 'Salsa', cursive;
   align-items: center;
   font-family: 'Saira', sans-serif;
   gap: 1rem;
-  border: 3px solid black;
+  /* border: 3px solid black; */
+}
+.cards:hover
+{
+ box-shadow:
+ 1px 1px #53a7ea,
+ 2px 2px #53a7ea,
+ 3px 3px #53a7ea;
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
 }
 .cards h1{
   height: 8vh;
@@ -503,6 +535,7 @@ font-family: 'Salsa', cursive;
   font-weight: 500;
   font-size: 2.5rem;
   font-family: myFirstFont;
+  linear-gradient:(to right, #30CFD0 0%, #330867 100%);
 }
 .cards .icon{
   height: 20vh;
@@ -577,11 +610,15 @@ font-family: 'Salsa', cursive;
 .join{
   width: 15vw;
   height: 7vh;
-  background-color: #2c73EB;
-  color: black;
+  /* background-color: #2c73EB; */
+  color: white;
   text-align: center;
   font-size: 1.2rem;
   padding-top: .8rem;
+  box-shadow: 0 0 5px #272e2f;
+  background: linear-gradient(to right bottom, #4776E6, #8E54E9);
+  border-radius: 10px;
+
 }
 .join h2{
   color: black;
@@ -747,13 +784,17 @@ font-family: 'Salsa', cursive;
     height: 35%;
     border-radius: 5px;
     border: 3px solid;
-    border-image: 
-    linear-gradient(
-      to bottom, 
-      red, 
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
   }
+  .cards:hover
+{
+ box-shadow:
+ 1px 1px #53a7ea,
+ 2px 2px #53a7ea,
+ 3px 3px #53a7ea;
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
+}
+
   .cards h1{
     height: 7%;
     padding: 1rem 0 0 0 ;
@@ -827,6 +868,10 @@ font-family: 'Salsa', cursive;
      .col1 h5{
       margin-top: 22rem;
      }
+     .tagline2{
+      display:inline-block;
+     }
+    
     /* address*/
     .address iframe{
       margin: 0;
@@ -985,11 +1030,12 @@ font-family: 'Salsa', cursive;
     height:fit-content;
   }
 }
+}
 @media(max-width:480px){
-    html{
-    font-size: 60%;
-  } 
-  #check:checked ~ .drop-menu{
-    margin: 58px auto;
-  }
+  html{
+  font-size: 60%;
+} 
+#check:checked ~ .drop-menu{
+  margin: 58px auto;
+}
 }
