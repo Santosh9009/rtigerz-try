@@ -507,7 +507,6 @@ font-family: 'Salsa', cursive;
   font-weight: 500;
   font-size: 2.5rem;
   font-family: myFirstFont;
-  linear-gradient:(to right, #30CFD0 0%, #330867 100%);
 }
 .cards .icon{
   height: 20vh;
